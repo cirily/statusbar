@@ -11,7 +11,7 @@ sudo apt install libkf5windowsystem-dev -y
 ## Build
 
 ```bash
-git clone https://github.com/cirily/statusbar/
+git clone https://github.com/cirily/statusbar.git
 cd statusbar
 mkdir build
 cd build
