@@ -11,6 +11,10 @@ sudo apt install libkf5windowsystem-dev -y
 ## Build
 
 ```bash
+git clone https://github.com/cirily/statusbar/
+cd statusbar
+mkdir build
+cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make
 sudo make install
