@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     cutefishos <cutefishos@foxmail.com>
+ * Author:     piscesys <piscesys@foxmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,9 +21,9 @@
 #include <QSettings>
 #include <QDBusPendingCall>
 
-static const QString s_sServer = "com.cutefish.Settings";
+static const QString s_sServer = "com.pisces.Settings";
 static const QString s_sPath = "/PrimaryBattery";
-static const QString s_sInterface = "com.cutefish.PrimaryBattery";
+static const QString s_sInterface = "com.pisces.PrimaryBattery";
 
 static Battery *SELF = nullptr;
 
@@ -41,9 +41,9 @@ Battery::Battery(QObject *parent)
                         "/org/freedesktop/UPower",
                         "org.freedesktop.UPower",
                         QDBusConnection::systemBus())
-    , m_interface("com.cutefish.Settings",
+    , m_interface("com.pisces.Settings",
                   "/PrimaryBattery",
-                  "com.cutefish.PrimaryBattery",
+                  "com.pisces.PrimaryBattery",
                   QDBusConnection::sessionBus())
     , m_available(false)
     , m_onBattery(false)
@@ -52,7 +52,7 @@ Battery::Battery(QObject *parent)
     m_available = m_interface.isValid() && !m_interface.lastError().isValid();
 
     if (m_available) {
-        QSettings settings("cutefishos", "statusbar");
+        QSettings settings("piscesys", "statusbar");
         settings.setDefaultFormat(QSettings::IniFormat);
         m_showPercentage = settings.value("BatteryPercentage", false).toBool();
 
@@ -103,7 +103,7 @@ void Battery::setShowPercentage(bool enabled)
 
     m_showPercentage = enabled;
 
-    QSettings settings("cutefishos", "statusbar");
+    QSettings settings("piscesys", "statusbar");
     settings.setDefaultFormat(QSettings::IniFormat);
     settings.setValue("BatteryPercentage", m_showPercentage);
 

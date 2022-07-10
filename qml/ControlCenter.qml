@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     Reion Wong <aj@cutefishos.com>
+ * Author:     Reion Wong <aj@piscesys.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,10 +23,10 @@ import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.0
 
-import Cutefish.Accounts 1.0 as Accounts
-import Cutefish.Bluez 1.0 as Bluez
-import Cutefish.StatusBar 1.0
-import Cutefish.Audio 1.0
+import Pisces.Accounts 1.0 as Accounts
+import Pisces.Bluez 1.0 as Bluez
+import Pisces.StatusBar 1.0
+import Pisces.Audio 1.0
 import FishUI 1.0 as FishUI
 
 ControlCenterDialog {
@@ -184,7 +184,7 @@ ControlCenterDialog {
                     source: "qrc:/images/" + (FishUI.Theme.darkMode ? "dark/" : "light/") + "settings.svg"
                     onLeftButtonClicked: {
                         control.visible = false
-                        process.startDetached("cutefish-settings")
+                        process.startDetached("pisces-settings")
                     }
                 }
 
@@ -196,7 +196,7 @@ ControlCenterDialog {
 //                    source: "qrc:/images/" + (FishUI.Theme.darkMode ? "dark/" : "light/") + "system-shutdown-symbolic.svg"
 //                    onLeftButtonClicked: {
 //                        control.visible = false
-//                        process.startDetached("cutefish-shutdown")
+//                        process.startDetached("pisces-shutdown")
 //                    }
 //                }
             }
@@ -245,7 +245,7 @@ ControlCenterDialog {
                     onClicked: nmHandler.enableWireless(!checked)
                     onPressAndHold: {
                         control.visible = false
-                        process.startDetached("cutefish-settings", ["-m", "wlan"])
+                        process.startDetached("pisces-settings", ["-m", "wlan"])
                     }
                 }
 
@@ -261,7 +261,7 @@ ControlCenterDialog {
                     onClicked: control.toggleBluetooth()
                     onPressAndHold: {
                         control.visible = false
-                        process.startDetached("cutefish-settings", ["-m", "bluetooth"])
+                        process.startDetached("pisces-settings", ["-m", "bluetooth"])
                     }
                 }
 
@@ -295,7 +295,7 @@ ControlCenterDialog {
                     label: qsTr("Screenshot")
                     onClicked: {
                         control.visible = false
-                        process.startDetached("cutefish-screenshot", ["-d", "500"])
+                        process.startDetached("pisces-screenshot", ["-d", "500"])
                     }
                 }
             }
@@ -459,7 +459,7 @@ ControlCenterDialog {
 
                 onClicked: {
                     control.visible = false
-                    process.startDetached("cutefish-settings", ["-m", "battery"])
+                    process.startDetached("pisces-settings", ["-m", "battery"])
                 }
 
                 RowLayout {

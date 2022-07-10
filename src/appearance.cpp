@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     cutefishos <cutefishos@foxmail.com>
+ * Author:     piscesys <piscesys@foxmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,11 +27,11 @@
 
 Appearance::Appearance(QObject *parent)
     : QObject(parent)
-    , m_interface("com.cutefish.Settings",
+    , m_interface("com.pisces.Settings",
                   "/Theme",
-                  "com.cutefish.Theme",
+                  "com.pisces.Theme",
                   QDBusConnection::sessionBus())
-    , m_dockSettings(new QSettings(QSettings::UserScope, "cutefishos", "dock"))
+    , m_dockSettings(new QSettings(QSettings::UserScope, "piscesys", "dock"))
     , m_dockConfigWacher(new QFileSystemWatcher(this))
     , m_dockIconSize(0)
     , m_dockDirection(0)
@@ -108,9 +108,9 @@ void Appearance::setGenericFontFamily(const QString &name)
     if (name.isEmpty())
         return;
 
-    QDBusInterface iface("com.cutefish.Settings",
+    QDBusInterface iface("com.pisces.Settings",
                          "/Theme",
-                         "com.cutefish.Theme",
+                         "com.pisces.Theme",
                          QDBusConnection::sessionBus(), this);
     if (iface.isValid()) {
         iface.call("setSystemFont", name);
@@ -122,9 +122,9 @@ void Appearance::setFixedFontFamily(const QString &name)
     if (name.isEmpty())
         return;
 
-    QDBusInterface iface("com.cutefish.Settings",
+    QDBusInterface iface("com.pisces.Settings",
                          "/Theme",
-                         "com.cutefish.Theme",
+                         "com.pisces.Theme",
                          QDBusConnection::sessionBus(), this);
     if (iface.isValid()) {
         iface.call("setSystemFixedFont", name);
@@ -140,9 +140,9 @@ void Appearance::setFontPointSize(int fontPointSize)
 {
     m_fontPointSize = fontPointSize;
 
-    QDBusInterface iface("com.cutefish.Settings",
+    QDBusInterface iface("com.pisces.Settings",
                          "/Theme",
-                         "com.cutefish.Theme",
+                         "com.pisces.Theme",
                          QDBusConnection::sessionBus(), this);
     if (iface.isValid()) {
         iface.call("setSystemFontPointSize", m_fontPointSize * 1.0);
@@ -151,9 +151,9 @@ void Appearance::setFontPointSize(int fontPointSize)
 
 void Appearance::setAccentColor(int accentColor)
 {
-    QDBusInterface iface("com.cutefish.Settings",
+    QDBusInterface iface("com.pisces.Settings",
                          "/Theme",
-                         "com.cutefish.Theme",
+                         "com.pisces.Theme",
                          QDBusConnection::sessionBus(), this);
     if (iface.isValid()) {
         iface.call("setAccentColor", accentColor);
@@ -167,9 +167,9 @@ double Appearance::devicePixelRatio() const
 
 void Appearance::setDevicePixelRatio(double value)
 {
-    QDBusInterface iface("com.cutefish.Settings",
+    QDBusInterface iface("com.pisces.Settings",
                          "/Theme",
-                         "com.cutefish.Theme",
+                         "com.pisces.Theme",
                          QDBusConnection::sessionBus(), this);
     if (iface.isValid()) {
         iface.call("setDevicePixelRatio", value);

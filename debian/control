@@ -1,7 +1,7 @@
-Source: cutefish-statusbar
+Source: pisces-statusbar
 Section: devel
 Priority: optional
-Maintainer: CutefishOS <support@cutefishos.com>
+Maintainer: Piscesys Packaging Team <support@piscesys.com>
 Build-Depends: cmake,
                debhelper (>= 9),
                extra-cmake-modules,
@@ -14,9 +14,9 @@ Build-Depends: cmake,
                qttools5-dev-tools,
                pkg-config
 Standards-Version: 4.5.0
-Homepage: https://cutefishos.com
+Homepage: https://piscesys.com
 
-Package: cutefish-statusbar
+Package: pisces-statusbar
 Architecture: any
 Depends: qml-module-qtquick-controls2,
          qml-module-qtquick2,
@@ -28,4 +28,4 @@ Depends: qml-module-qtquick-controls2,
          qml-module-qtquick-shapes,
          ${misc:Depends},
          ${shlibs:Depends}
-Description: CutefishOS Statusbar
+Description: Piscesys Statusbar

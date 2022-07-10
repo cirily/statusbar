@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Reion Wong <aj@cutefishos.com>
+ * Copyright 2021 Reion Wong <aj@piscesys.com>
  * Copyright 2016 Kai Uwe Broulik <kde@privat.broulik.de>
  *
  * This program is free software; you can redistribute it and/or

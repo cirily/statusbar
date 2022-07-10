@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -23,9 +23,9 @@
 #include <QApplication>
 #include <QProcess>
 
-const static QString s_dbusName = "com.cutefish.Session";
+const static QString s_dbusName = "com.pisces.Session";
 const static QString s_pathName = "/Session";
-const static QString s_interfaceName = "com.cutefish.Session";
+const static QString s_interfaceName = "com.pisces.Session";
 
 PowerActions::PowerActions(QObject *parent)
     : QObject(parent)
@@ -59,7 +59,7 @@ void PowerActions::reboot()
 
 void PowerActions::lockScreen()
 {
-    QProcess::startDetached("cutefish-screenlocker", QStringList());
+    QProcess::startDetached("pisces-screenlocker", QStringList());
 }
 
 void PowerActions::suspend()

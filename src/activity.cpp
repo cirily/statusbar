@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     cutefishos <cutefishos@foxmail.com>
+ * Author:     piscesys <piscesys@foxmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,8 +30,8 @@
 #include <NETWM>
 #include <KWindowSystem>
 
-static const QStringList blockList = {"cutefish-launcher",
-                                      "cutefish-statusbar"};
+static const QStringList blockList = {"pisces-launcher",
+                                      "pisces-statusbar"};
 
 Activity::Activity(QObject *parent)
     : QObject(parent)
@@ -159,7 +159,7 @@ void Activity::onActiveWindowChanged()
                      NET::WMState | NET::WMVisibleName | NET::WMWindowType,
                      NET::WM2WindowClass);
 
-    m_launchPad = (info.windowClassClass() == "cutefish-launcher");
+    m_launchPad = (info.windowClassClass() == "pisces-launcher");
     emit launchPadChanged();
 
     if (NET::typeMatchesMask(info.windowType(NET::AllTypesMask), NET::DesktopMask)) {

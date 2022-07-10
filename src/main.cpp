@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     cutefishos <cutefishos@foxmail.com>
+ * Author:     piscesys <piscesys@foxmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
 
-    const char *uri = "Cutefish.StatusBar";
+    const char *uri = "Pisces.StatusBar";
     qmlRegisterType<SystemTrayModel>(uri, 1, 0, "SystemTrayModel");
     qmlRegisterType<ControlCenterDialog>(uri, 1, 0, "ControlCenterDialog");
     qmlRegisterType<Appearance>(uri, 1, 0, "Appearance");
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<Notifications>(uri, 1, 0, "Notifications");
     qmlRegisterType<BackgroundHelper>(uri, 1, 0, "BackgroundHelper");
 
-    QString qmFilePath = QString("%1/%2.qm").arg("/usr/share/cutefish-statusbar/translations/").arg(QLocale::system().name());
+    QString qmFilePath = QString("%1/%2.qm").arg("/usr/share/pisces-statusbar/translations/").arg(QLocale::system().name());
     if (QFile::exists(qmFilePath)) {
         QTranslator *translator = new QTranslator(QApplication::instance());
         if (translator->load(qmFilePath)) {
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
     StatusBar bar;
 
-    if (!QDBusConnection::sessionBus().registerService("com.cutefish.Statusbar")) {
+    if (!QDBusConnection::sessionBus().registerService("com.pisces.Statusbar")) {
         return -1;
     }
 

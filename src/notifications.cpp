@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 - 2022 CutefishOS Team.
+ * Copyright (C) 2021 - 2022 Piscesys Team.
  *
- * Author:     Reion Wong <reion@cutefishos.com>
+ * Author:     Reion Wong <reion@piscesys.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,15 +21,15 @@
 
 Notifications::Notifications(QObject *parent)
     : QObject(parent)
-    , m_iface("com.cutefish.Notification",
+    , m_iface("com.pisces.Notification",
               "/Notification",
-              "com.cutefish.Notification", QDBusConnection::sessionBus())
+              "com.pisces.Notification", QDBusConnection::sessionBus())
 {
     m_doNotDisturb = m_iface.property("doNotDisturb").toBool();
 
-    QDBusConnection::sessionBus().connect("com.cutefish.Notification",
+    QDBusConnection::sessionBus().connect("com.pisces.Notification",
                                           "/Notification",
-                                          "com.cutefish.Notification",
+                                          "com.pisces.Notification",
                                           "doNotDisturbChanged", this, SLOT(onDBusDoNotDisturbChanged()));
 }
 
@@ -42,9 +42,9 @@ void Notifications::setDoNotDisturb(bool enabled)
 {
     m_doNotDisturb = enabled;
 
-    QDBusInterface iface("com.cutefish.Notification",
+    QDBusInterface iface("com.pisces.Notification",
                          "/Notification",
-                         "com.cutefish.Notification", QDBusConnection::sessionBus());
+                         "com.pisces.Notification", QDBusConnection::sessionBus());
 
     if (iface.isValid()) {
         iface.asyncCall("setDoNotDisturb", enabled);

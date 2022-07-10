@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 - 2022 CutefishOS Team.
+ * Copyright (C) 2021 - 2022 Piscesys Team.
  *
- * Author:     Kate Leet <kate@cutefishos.com>
+ * Author:     Kate Leet <kate@piscesys.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,10 +23,10 @@ import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.0
 
-import Cutefish.Accounts 1.0 as Accounts
-import Cutefish.Bluez 1.0 as Bluez
-import Cutefish.StatusBar 1.0
-import Cutefish.Audio 1.0
+import Pisces.Accounts 1.0 as Accounts
+import Pisces.Bluez 1.0 as Bluez
+import Pisces.StatusBar 1.0
+import Pisces.Audio 1.0
 import FishUI 1.0 as FishUI
 
 ControlCenterDialog {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 - 2022 CutefishOS Team.
+ * Copyright (C) 2021 - 2022 Piscesys Team.
  *
  * Author:     Reion Wong <reionwong@gmail.com>
  *

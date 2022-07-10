@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     Reion Wong <aj@cutefishos.com>
+ * Author:     Reion Wong <aj@piscesys.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,9 +22,9 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 
-import Cutefish.System 1.0 as System
-import Cutefish.StatusBar 1.0
-import Cutefish.NetworkManagement 1.0 as NM
+import Pisces.System 1.0 as System
+import Pisces.StatusBar 1.0
+import Pisces.NetworkManagement 1.0 as NM
 import FishUI 1.0 as FishUI
 
 Item {
@@ -374,7 +374,7 @@ Item {
             Layout.preferredWidth: _dateTimeLayout.implicitWidth + FishUI.Units.smallSpacing
 
             onClicked: {
-                process.startDetached("cutefish-notificationd", ["-s"])
+                process.startDetached("pisces-notificationd", ["-s"])
             }
 
             RowLayout {

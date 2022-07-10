@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     cutefishos <cutefishos@foxmail.com>
+ * Author:     piscesys <piscesys@foxmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,9 @@
 #include <QDBusServiceWatcher>
 #include <QDBusPendingCall>
 
-static const QString Service = "com.cutefish.Settings";
+static const QString Service = "com.pisces.Settings";
 static const QString ObjectPath = "/Audio";
-static const QString Interface = "com.cutefish.Audio";
+static const QString Interface = "com.pisces.Audio";
 
 static VolumeManager *SELF = nullptr;
 

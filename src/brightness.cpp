@@ -1,7 +1,7 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 Piscesys Team.
  *
- * Author:     cutefishos <cutefishos@foxmail.com>
+ * Author:     piscesys <piscesys@foxmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,9 +23,9 @@
 Brightness::Brightness(QObject *parent)
     : QObject(parent)
     , m_dbusConnection(QDBusConnection::sessionBus())
-    , m_iface("com.cutefish.Settings",
+    , m_iface("com.pisces.Settings",
               "/Brightness",
-              "com.cutefish.Brightness", m_dbusConnection)
+              "com.pisces.Brightness", m_dbusConnection)
     , m_value(0)
     , m_enabled(false)
 {

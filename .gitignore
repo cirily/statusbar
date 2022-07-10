@@ -52,3 +52,13 @@ compile_commands.json
 *creator.user*
 
 build/*
+.vscode/
+
+debian/*.debhelper
+debian/files
+debian/pisces-statusbar
+debian/*.changes
+debian/*.buildinfo
+debian/*.substvars
+debian/*.log
+obj-x86_64-linux-gnu/
